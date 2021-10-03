@@ -4,10 +4,33 @@
 }
 
 .maxWidthWrapper {
+  isolation: isolate;
 }
+
+.fixedCharacterWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .fixedCharacterWrapper {
+    position: relative;
+    padding: 0;
+  }
+}
+
 
 .header {
   padding-bottom: 64px;
+  width: 65%;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: auto;
+  }
 }
 
 .title {
@@ -24,7 +47,41 @@
 }
 
 .characterWrapper {
+  position: absolute;
+  top: 128px;
+  right: 0;
+  width: 35%;
+}
+
+@media only screen and (max-width: 600px) {
+  .characterWrapper {
+    position: relative;
+    top: 0;
+    width: auto;
+  }
 }
 
 .controlColumn {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .controlColumn {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    padding: 0 20px;
+  }
+}
+
+.decorativeBackground {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background-color: hsl(195deg, 20%, 86%);
 }
